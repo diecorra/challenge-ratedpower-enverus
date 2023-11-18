@@ -15,12 +15,12 @@ const Sidebar: React.FC = () => {
   return (
     <>
       <SidebarContainer>
-        <WrapperBody style={{ height: '90%' }}>
+        <WrapperBody>
           <Title>PlanetsApp</Title>
           <StyledLink to="/planets">Planets</StyledLink>
           <StyledLink to="/favorites">Favorites</StyledLink>
         </WrapperBody>
-        <WrapperFooter style={{ padding: '1rem' }}>
+        <WrapperFooter>
           <Button onClick={toggleTheme}>{themeMode.toUpperCase()}</Button>
         </WrapperFooter>
       </SidebarContainer>

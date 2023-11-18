@@ -2,7 +2,7 @@ import { useFavoritePlanets } from 'src/store/favorite';
 import planet from '../../assets/planet.svg';
 import { ContainerMessage, PageContainerWithPadding } from 'src/styles/global';
 import Card from './Card';
-import { CardsContainer } from './style';
+import { CardsContainer } from './cardStyle';
 
 const Favorites = () => {
   const favorites = useFavoritePlanets((state) => state.favorites);

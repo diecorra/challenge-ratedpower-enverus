@@ -8,13 +8,6 @@ export const CardsContainer = styled.div`
   flex-wrap: wrap;
 `;
 
-// display: 'flex',
-//               justifyContent: 'center',
-//               alignItems: 'center',
-//               alignContent: 'center',
-//               width: '100%',
-//               height: '100%',
-
 export const CardStyle = styled.div`
   border-radius: 10px;
   background-color: ${({ theme }) => theme.card.background};

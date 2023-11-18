@@ -22,7 +22,7 @@ import {
   RemoveIcon,
   Title,
   TitleSection,
-} from './style';
+} from './cardStyle';
 
 const Card = ({
   image,

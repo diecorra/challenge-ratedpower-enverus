@@ -154,7 +154,6 @@ const Table = () => {
                 const page = e.target.value ? Number(e.target.value) - 1 : 0;
                 table.setPageIndex(page);
               }}
-              className="border p-1 rounded w-16"
             />
           </NavigatorTable>
         </TableContainer>
