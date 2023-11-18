@@ -1,35 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { useThemeStore } from './store/theme';
+import { darkTheme, lightTheme } from './styles/theme';
+import { ThemeProvider } from 'styled-components';
+import { BoxContainer, GlobalStyle } from './styles/global';
+import Sidebar from './features/sidebar/SideBar';
+import Planets from './features/planets/Planets';
+import Favorites from './features/favorites/Favorites';
+import NotFound from './features/notFound/NotFound';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const themeMode = useThemeStore((state) => state.theme);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <ThemeProvider theme={themeMode === 'light' ? lightTheme : darkTheme}>
+      <GlobalStyle />
+      <BrowserRouter>
+        <BoxContainer>
+          <Sidebar />
+          <Routes>
+            <Route path="/" element={<Navigate to="planets" />} />
+            <Route path="planets" element={<Planets />} />
+            <Route path="planets/:id" element={<Planets />} />
+            <Route path="favorites" element={<Favorites />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BoxContainer>
+      </BrowserRouter>
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;
