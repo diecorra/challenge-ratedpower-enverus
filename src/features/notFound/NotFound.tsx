@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { PageContainer } from 'src/styles/global';
-import { ErrorContainer } from './style';
+import { ContainerMessage, PageContainer } from 'src/styles/global';
 import { Button } from 'src/styles/button';
 
 const NotFound = () => {
@@ -8,10 +7,10 @@ const NotFound = () => {
 
   return (
     <PageContainer>
-      <ErrorContainer>
+      <ContainerMessage>
         Page not found!
         <Button onClick={() => navigate('/planets')}>Go to Planets page</Button>
-      </ErrorContainer>
+      </ContainerMessage>
     </PageContainer>
   );
 };

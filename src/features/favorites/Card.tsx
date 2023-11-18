@@ -15,10 +15,10 @@ import {
 } from './modalStyle';
 import {
   CardBox,
+  CardImg,
   CardStyle,
   Description,
   DescriptionSection,
-  Img,
   RemoveIcon,
   Title,
   TitleSection,
@@ -62,7 +62,7 @@ const Card = ({
             <Title>{title}</Title>
           </TitleSection>
           <RemoveIcon onClick={() => setIsShowModal(true)} />
-          <Img src={image} alt={title} />
+          <CardImg src={image} alt={title} />
           <DescriptionSection>
             <Description>{firstDescription}</Description>
             <Description>{secondDescription}</Description>

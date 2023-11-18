@@ -23,6 +23,18 @@ export const Wrapper = styled.section`
   flex-direction: column;
 `;
 
+export const WrapperBody = styled(Wrapper)`
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+`;
+
+export const WrapperFooter = styled(Wrapper)`
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+`;
+
 export const StyledLink = styled(NavLink)`
   color: ${({ theme }) => theme.text.secondary};
   padding: 1rem;

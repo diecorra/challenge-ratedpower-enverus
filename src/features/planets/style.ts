@@ -10,10 +10,12 @@ export const StyledDetail = styled.div`
 export const TitleDetail = styled.div`
   text-align: center;
   padding: 1rem;
-  color: ${({ theme }) => theme.text.secondary};
+  color: ${({ theme }) => theme.detail.title};
+  font-size: 16px;
 `;
 
 export const BodyDetail = styled.div`
+  color: ${({ theme }) => theme.detail.body};
   height: 110px;
   width: 240px;
   margin: 5px;
@@ -22,8 +24,7 @@ export const BodyDetail = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  color: ${({ theme }) => theme.text.primary};
-  background-color: ${({ theme }) => theme.card};
+  background-color: ${({ theme }) => theme.detail.background};
   gap: 5px;
 `;
 

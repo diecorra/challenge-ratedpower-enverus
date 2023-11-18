@@ -1,22 +1,17 @@
 import { useFavoritePlanets } from 'src/store/favorite';
 import planet from '../../assets/planet.svg';
-import { PageContainer } from 'src/styles/global';
+import { ContainerMessage, PageContainerWithPadding } from 'src/styles/global';
 import Card from './Card';
+import { CardsContainer } from './style';
 
 const Favorites = () => {
   const favorites = useFavoritePlanets((state) => state.favorites);
 
   return (
-    <PageContainer style={{ padding: '20px' }}>
+    <PageContainerWithPadding>
       <>
         {favorites.length ? (
-          <div
-            style={{
-              display: 'flex',
-              gap: '5rem',
-              flexWrap: 'wrap',
-            }}
-          >
+          <CardsContainer>
             {favorites.map((favorite) => (
               <Card
                 key={favorite.name}
@@ -26,23 +21,12 @@ const Favorites = () => {
                 secondDescription={'Gravity: ' + favorite.gravity}
               />
             ))}
-          </div>
+          </CardsContainer>
         ) : (
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              alignContent: 'center',
-              width: '100%',
-              height: '100%',
-            }}
-          >
-            No favorites
-          </div>
+          <ContainerMessage>No favorites</ContainerMessage>
         )}
       </>
-    </PageContainer>
+    </PageContainerWithPadding>
   );
 };
 

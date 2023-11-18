@@ -1,6 +1,12 @@
 import { Button } from '../../styles/button';
 import { useThemeStore } from '../../store/theme';
-import { SidebarContainer, StyledLink, Title, Wrapper } from './style';
+import {
+  SidebarContainer,
+  StyledLink,
+  Title,
+  WrapperBody,
+  WrapperFooter,
+} from './style';
 
 const Sidebar: React.FC = () => {
   const toggleTheme = useThemeStore((state) => state.changeTheme);
@@ -9,14 +15,14 @@ const Sidebar: React.FC = () => {
   return (
     <>
       <SidebarContainer>
-        <Wrapper style={{ height: '90%' }}>
+        <WrapperBody style={{ height: '90%' }}>
           <Title>PlanetsApp</Title>
           <StyledLink to="/planets">Planets</StyledLink>
           <StyledLink to="/favorites">Favorites</StyledLink>
-        </Wrapper>
-        <Wrapper style={{ padding: '1rem' }}>
+        </WrapperBody>
+        <WrapperFooter style={{ padding: '1rem' }}>
           <Button onClick={toggleTheme}>{themeMode.toUpperCase()}</Button>
-        </Wrapper>
+        </WrapperFooter>
       </SidebarContainer>
     </>
   );

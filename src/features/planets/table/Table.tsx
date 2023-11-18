@@ -4,28 +4,27 @@ import {
   getCoreRowModel,
   useReactTable,
 } from '@tanstack/react-table';
-import { Button } from '../../../styles/button';
 import { useNavigate } from 'react-router-dom';
-import { addFavoritesIntoResponse, getPlanets } from '../../../api';
 import { columns } from './columns';
 import { useQuery, keepPreviousData } from '@tanstack/react-query';
 import { useEffect, useMemo, useState } from 'react';
-import { useFavoritePlanets } from '../../../store/favorite';
 import {
   ButtonPages,
   NavigatorTable,
-  StyledTBody,
-  StyledTHead,
+  PageInput,
   StyledTable,
   StyledTd,
   StyledTh,
   StyledTr,
   StyledTrHeader,
+  TableContainer,
 } from './style';
-import loading from '../../../assets/loading.svg';
-import { ErrorContainer } from '../../notFound/style';
-import { Overlay } from '../../../styles/global';
-import { usePlanets } from '../../../store/planets';
+import loading from 'src/assets/loading.svg';
+import { usePlanets } from 'src/store/planets';
+import { ContainerMessage, LoadingImg, Overlay } from 'src/styles/global';
+import { useFavoritePlanets } from 'src/store/favorite';
+import { addFavoritesIntoResponse, getPlanets } from 'src/api';
+import { Button } from 'src/styles/button';
 
 const Table = () => {
   const [{ pageIndex, pageSize }, setPagination] = useState<PaginationState>({
@@ -75,13 +74,13 @@ const Table = () => {
     <>
       {isFetching || isLoading ? (
         <Overlay>
-          <img src={loading} style={{ width: '5rem', height: '5rem' }} alt="" />
+          <LoadingImg src={loading} />
         </Overlay>
       ) : null}
       {data && (
-        <div style={{ width: '100%', padding: '20px' }}>
+        <TableContainer>
           <StyledTable $detailVisualized={false}>
-            <StyledTHead>
+            <thead>
               {table.getHeaderGroups().map((headerGroup) => (
                 <StyledTrHeader key={headerGroup.id}>
                   {headerGroup.headers.map((header) => (
@@ -96,8 +95,8 @@ const Table = () => {
                   ))}
                 </StyledTrHeader>
               ))}
-            </StyledTHead>
-            <StyledTBody>
+            </thead>
+            <tbody>
               {table.getRowModel().rows.map((row) => (
                 <StyledTr
                   key={row.id}
@@ -113,7 +112,7 @@ const Table = () => {
                   ))}
                 </StyledTr>
               ))}
-            </StyledTBody>
+            </tbody>
           </StyledTable>
           <NavigatorTable>
             <ButtonPages
@@ -146,8 +145,7 @@ const Table = () => {
               {table.getPageCount()}
             </strong>
             <div>Go to page:</div>
-            <input
-              style={{ borderRadius: '5px', width: '3rem' }}
+            <PageInput
               min={1}
               max={10}
               type="number"
@@ -159,13 +157,13 @@ const Table = () => {
               className="border p-1 rounded w-16"
             />
           </NavigatorTable>
-        </div>
+        </TableContainer>
       )}
       {isError && (
-        <ErrorContainer>
+        <ContainerMessage>
           We're sorry! Problems with the response.
           <Button onClick={() => navigate(0)}>Refresh page</Button>
-        </ErrorContainer>
+        </ContainerMessage>
       )}
     </>
   );

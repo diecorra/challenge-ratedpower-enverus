@@ -24,6 +24,26 @@ export const PageContainer = styled.div`
   background-color: ${({ theme }) => theme.body};
 `;
 
+export const PageContainerMax = styled(PageContainer)`
+  display: flex;
+  width: 100%;
+  height: 100%;
+`;
+
+export const PageContainerWithPadding = styled(PageContainer)`
+  padding: 20px;
+`;
+
+export const ContainerMessage = styled.div`
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  gap: 12px;
+`;
+
 export const Overlay = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
@@ -34,4 +54,9 @@ export const Overlay = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 5;
+`;
+
+export const LoadingImg = styled.img`
+  width: 5rem;
+  height: 5rem;
 `;

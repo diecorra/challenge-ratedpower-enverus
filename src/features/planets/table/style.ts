@@ -1,3 +1,4 @@
+import { FaRegStar, FaStar } from 'react-icons/fa';
 import styled from 'styled-components';
 
 export const StyledTable = styled.table<{ $detailVisualized: boolean }>`
@@ -35,18 +36,6 @@ export const StyledTrHeader = styled.tr`
   cursor: default;
 `;
 
-export const StyledTHead = styled.thead`
-  // Your thead styles
-`;
-
-export const StyledTBody = styled.tbody`
-  // Your thead styles
-`;
-
-export const StyledTFoot = styled.tfoot`
-  // Your thead styles
-`;
-
 export const ButtonPages = styled.button`
   cursor: pointer;
   width: 3rem;
@@ -67,4 +56,23 @@ export const NavigatorTable = styled.div`
   gap: 1rem;
   align-items: center;
   color: ${({ theme }) => theme.text.primary};
+`;
+
+export const FaStarMarked = styled(FaStar)`
+  cursor: pointer;
+  color: ${({ theme }) => theme.star};
+`;
+
+export const FaRegStarUnMarked = styled(FaRegStar)`
+  cursor: pointer;
+`;
+
+export const TableContainer = styled.div`
+  width: 100%;
+  padding: 20px;
+`;
+
+export const PageInput = styled.input`
+  border-radius: 5px;
+  width: 3rem;
 `;

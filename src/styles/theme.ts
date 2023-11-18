@@ -2,11 +2,16 @@ export const BLUE_SKY = '#2596be';
 export const BLUE_SKY_LIGHT = 'rgba(28,86,134, 0.8)';
 export const BLUE_SKY_DARK = '#154064';
 export const WHITE = '#dce8e6';
+export const BLACK = 'black';
 export const BLACK_OPACITY = 'rgba(255,255,255, 0.2)';
+export const BLACK_LIGHT = '#2b2b2e';
+export const GREY_LIGHT = '#b0a7a7';
+export const RED = '#be2f2f';
+export const RED_LIGHT = '#f2d7d7';
 
 export const lightTheme = {
   text: {
-    primary: `black`,
+    primary: BLACK,
     secondary: WHITE,
   },
   navigator: {
@@ -16,16 +21,32 @@ export const lightTheme = {
   button: {
     primary: BLUE_SKY_LIGHT,
     secondary: '#cccccc',
-    border: 'black',
+    border: BLACK,
   },
   body: WHITE,
   table: {
-    text: 'black',
-    border: 'black',
+    text: BLACK,
+    border: BLACK,
     alternate: '#a1b4d4',
     hover: BLUE_SKY_LIGHT,
   },
-  card: WHITE,
+  card: {
+    background: WHITE,
+    color: BLACK,
+  },
+  star: BLUE_SKY,
+  detail: {
+    background: WHITE,
+    title: WHITE,
+    body: BLACK,
+  },
+  modal: {
+    title: RED,
+    header: RED_LIGHT,
+    body: WHITE,
+    button: RED,
+    text: BLACK,
+  },
 };
 
 export const darkTheme = {
@@ -39,15 +60,31 @@ export const darkTheme = {
   },
   button: {
     primary: BLUE_SKY_LIGHT,
-    secondary: '#b0a7a7',
+    secondary: GREY_LIGHT,
     border: WHITE,
   },
-  body: '#2b2b2e',
+  body: BLACK_LIGHT,
   table: {
     text: WHITE,
     border: WHITE,
     alternate: BLACK_OPACITY,
     hover: BLUE_SKY_LIGHT,
   },
-  card: WHITE,
+  card: {
+    background: WHITE,
+    color: BLACK,
+  },
+  star: BLUE_SKY,
+  detail: {
+    background: WHITE,
+    title: WHITE,
+    body: BLACK,
+  },
+  modal: {
+    title: RED,
+    header: RED_LIGHT,
+    body: WHITE,
+    button: RED,
+    text: BLACK,
+  },
 };

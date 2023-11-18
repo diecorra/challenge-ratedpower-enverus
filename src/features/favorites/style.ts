@@ -1,9 +1,23 @@
 import { IoIosClose } from 'react-icons/io';
 import styled from 'styled-components';
 
+export const CardsContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  flex-wrap: wrap;
+`;
+
+// display: 'flex',
+//               justifyContent: 'center',
+//               alignItems: 'center',
+//               alignContent: 'center',
+//               width: '100%',
+//               height: '100%',
+
 export const CardStyle = styled.div`
   border-radius: 10px;
-  background-color: ${({ theme }) => theme.card};
+  background-color: ${({ theme }) => theme.card.background};
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   &:hover {
@@ -29,7 +43,7 @@ export const Title = styled.h3`
   font-weight: 700;
 `;
 
-export const Img = styled.img`
+export const CardImg = styled.img`
   width: 100%;
   height: 60%;
 `;

@@ -2,7 +2,7 @@ import { IoIosClose } from 'react-icons/io';
 import styled from 'styled-components';
 
 export const ModalContainer = styled.div`
-  background-color: #fefefe;
+  background-color: ${({ theme }) => theme.modal.body};
   width: 400px;
   height: 180px;
   z-index: 10;
@@ -12,7 +12,7 @@ export const ModalContainer = styled.div`
 `;
 
 export const ModalTitleSection = styled.div`
-  background-color: #f2d7d7;
+  background-color: ${({ theme }) => theme.modal.header};
   height: 30%;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -23,7 +23,7 @@ export const ModalTitleSection = styled.div`
 `;
 
 export const ModalTitle = styled.h3`
-  color: #be2f2f;
+  color: ${({ theme }) => theme.modal.title};
   font-size: 16px;
   font-weight: 700;
   padding-left: 10px;
@@ -40,7 +40,6 @@ export const ModalCloseIcon = styled(IoIosClose)`
 `;
 
 export const BodySection = styled.div`
-  color: red;
   height: 70%;
   width: 100%;
   border-bottom-left-radius: 10px;
@@ -51,7 +50,7 @@ export const BodySection = styled.div`
 `;
 
 export const MessageSection = styled.p`
-  color: black;
+  color: ${({ theme }) => theme.modal.text};
   font-weight: 300;
   padding-left: 10px;
 `;
@@ -70,6 +69,6 @@ export const Button = styled.button`
 `;
 
 export const RemoveButton = styled(Button)`
-  background-color: #be2f2f;
+  background-color: ${({ theme }) => theme.modal.button};
   color: ${({ theme }) => theme.text.secondary};
 `;
