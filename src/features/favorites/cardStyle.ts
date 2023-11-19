@@ -11,10 +11,10 @@ export const CardsContainer = styled.div`
 export const CardStyle = styled.div`
   border-radius: 10px;
   background-color: ${({ theme }) => theme.card.background};
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 ${({ theme }) => theme.card.shadow};
   transition: 0.3s;
   &:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px 0 ${({ theme }) => theme.card.shadow};
   }
 `;
 

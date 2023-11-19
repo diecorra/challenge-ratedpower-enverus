@@ -5,6 +5,7 @@ export const WHITE = '#dce8e6';
 export const BLACK = 'black';
 export const BLACK_OPACITY = 'rgba(255,255,255, 0.2)';
 export const BLACK_LIGHT = '#2b2b2e';
+export const BLACK_SHADOW = 'rgba(0, 0, 0, 0.2)';
 export const GREY_LIGHT = '#b0a7a7';
 export const RED = '#be2f2f';
 export const RED_LIGHT = '#f2d7d7';
@@ -33,6 +34,7 @@ export const lightTheme = {
   card: {
     background: WHITE,
     color: BLACK,
+    shadow: BLACK_SHADOW,
   },
   star: BLUE_SKY,
   detail: {
@@ -73,6 +75,7 @@ export const darkTheme = {
   card: {
     background: WHITE,
     color: BLACK,
+    shadow: BLACK_OPACITY,
   },
   star: BLUE_SKY,
   detail: {
