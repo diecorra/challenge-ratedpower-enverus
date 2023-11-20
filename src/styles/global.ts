@@ -35,6 +35,7 @@ export const PageContainerWithPadding = styled(PageContainer)`
 `;
 
 export const ContainerMessage = styled.div`
+  color: ${({ theme }) => theme.text.primary};
   justify-content: center;
   display: flex;
   flex-direction: column;
@@ -45,7 +46,7 @@ export const ContainerMessage = styled.div`
 `;
 
 export const Overlay = styled.div`
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: ${({ theme }) => theme.overlay};
   position: fixed;
   inset: 0;
   height: 100%;
