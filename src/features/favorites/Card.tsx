@@ -37,7 +37,10 @@ const Card = ({
     <>
       {showModal ? (
         <Overlay onClick={() => setIsShowModal(!showModal)}>
-          <ModalContainer onClick={(e) => e.stopPropagation()}>
+          <ModalContainer
+            data-testid="modal"
+            onClick={(e) => e.stopPropagation()}
+          >
             <ModalTitleSection>
               <ModalTitle>Remove favorite</ModalTitle>
               <ModalCloseIcon onClick={() => setIsShowModal(false)} />
@@ -48,7 +51,10 @@ const Card = ({
               </MessageSection>
               <ButtonSection>
                 <Button onClick={() => setIsShowModal(false)}>Cancel</Button>
-                <RemoveButton onClick={() => removeFavorite(title)}>
+                <RemoveButton
+                  data-testid="removeModalbtn"
+                  onClick={() => removeFavorite(title)}
+                >
                   Remove
                 </RemoveButton>
               </ButtonSection>
@@ -61,7 +67,10 @@ const Card = ({
           <TitleSection>
             <Title>{title}</Title>
           </TitleSection>
-          <RemoveIcon onClick={() => setIsShowModal(true)} />
+          <RemoveIcon
+            data-testid="openModal"
+            onClick={() => setIsShowModal(true)}
+          />
           <CardImg src={image} alt={title} />
           <DescriptionSection>
             <Description>{firstDescription}</Description>

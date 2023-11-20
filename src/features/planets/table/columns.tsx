@@ -23,9 +23,15 @@ export const columns = (addFavorite: any, removeFavorite: any) => [
   columnHelper.accessor('favorite', {
     cell: (info) =>
       info.getValue() ? (
-        <FaStarMarked onClick={() => removeFavorite(info.row.original.name)} />
+        <FaStarMarked
+          data-testid={`starMarked${info.row.id}`}
+          onClick={() => removeFavorite(info.row.original.name)}
+        />
       ) : (
-        <FaRegStarUnMarked onClick={() => addFavorite(info.row.original)} />
+        <FaRegStarUnMarked
+          data-testid={`starUnMarked${info.row.id}`}
+          onClick={() => addFavorite(info.row.original)}
+        />
       ),
   }),
 ];

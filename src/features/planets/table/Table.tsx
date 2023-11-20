@@ -78,7 +78,7 @@ const Table = () => {
         </Overlay>
       ) : null}
       {data && (
-        <TableContainer>
+        <TableContainer data-testid="table">
           <StyledTable $detailVisualized={false}>
             <thead>
               {table.getHeaderGroups().map((headerGroup) => (
@@ -99,6 +99,7 @@ const Table = () => {
             <tbody>
               {table.getRowModel().rows.map((row) => (
                 <StyledTr
+                  data-testid={`row${row.id}`}
                   key={row.id}
                   onClick={() => navigate(`/planets/${row.original.name}`)}
                 >
@@ -116,24 +117,28 @@ const Table = () => {
           </StyledTable>
           <NavigatorTable>
             <ButtonPages
+              data-testid="allPrevBtn"
               onClick={() => table.setPageIndex(0)}
               disabled={!table.getCanPreviousPage()}
             >
               {'<<'}
             </ButtonPages>
             <ButtonPages
+              data-testid="prevBtn"
               onClick={() => table.previousPage()}
               disabled={!table.getCanPreviousPage()}
             >
               {'<'}
             </ButtonPages>
             <ButtonPages
+              data-testid="nextBtn"
               onClick={() => table.nextPage()}
               disabled={!table.getCanNextPage()}
             >
               {'>'}
             </ButtonPages>
             <ButtonPages
+              data-testid="allNextBtn"
               onClick={() => table.setPageIndex(table.getPageCount() - 1)}
               disabled={!table.getCanNextPage()}
             >
@@ -159,7 +164,7 @@ const Table = () => {
         </TableContainer>
       )}
       {isError && (
-        <ContainerMessage>
+        <ContainerMessage data-testid="errorData">
           We're sorry! Problems with the response.
           <Button onClick={() => navigate(0)}>Refresh page</Button>
         </ContainerMessage>

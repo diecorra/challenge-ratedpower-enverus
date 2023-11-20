@@ -4,7 +4,7 @@ import PlanetDetail from './PlanetDetail';
 
 const Planets = () => {
   return (
-    <PageContainerMax>
+    <PageContainerMax data-testid="planetsPage">
       <Table />
       <PlanetDetail />
     </PageContainerMax>

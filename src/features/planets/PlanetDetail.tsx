@@ -21,9 +21,11 @@ const PlanetDetail = () => {
   return (
     <>
       {name && status === 'idle' && (
-        <StyledDetail>
-          <TitleDetail>{planet ? planet.name : name}</TitleDetail>
-          <BodyDetail>
+        <StyledDetail data-testid="planetDetail">
+          <TitleDetail data-testid="planetDetailTitle">
+            {planet ? planet.name : name}
+          </TitleDetail>
+          <BodyDetail data-testid="planetDetailBody">
             {planet ? (
               <>
                 <Description>{`Climate: ${planet.climate}`}</Description>

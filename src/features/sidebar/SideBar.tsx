@@ -14,14 +14,20 @@ const Sidebar: React.FC = () => {
 
   return (
     <>
-      <SidebarContainer>
+      <SidebarContainer data-testid="sidebar">
         <WrapperBody>
-          <Title>PlanetsApp</Title>
-          <StyledLink to="/planets">Planets</StyledLink>
-          <StyledLink to="/favorites">Favorites</StyledLink>
+          <Title data-testid="sidebar-title">PlanetsApp</Title>
+          <StyledLink data-testid="planets-link" to="/planets">
+            Planets
+          </StyledLink>
+          <StyledLink data-testid="favorites-link" to="/favorites">
+            Favorites
+          </StyledLink>
         </WrapperBody>
         <WrapperFooter>
-          <Button onClick={toggleTheme}>{themeMode.toUpperCase()}</Button>
+          <Button data-testid="changetheme-button" onClick={toggleTheme}>
+            {themeMode.toUpperCase()}
+          </Button>
         </WrapperFooter>
       </SidebarContainer>
     </>

@@ -8,10 +8,10 @@ const Favorites = () => {
   const favorites = useFavoritePlanets((state) => state.favorites);
 
   return (
-    <PageContainerWithPadding>
+    <PageContainerWithPadding data-testid="favoritesPage">
       <>
         {favorites.length ? (
-          <CardsContainer>
+          <CardsContainer data-testid="card">
             {favorites.map((favorite) => (
               <Card
                 key={favorite.name}
@@ -23,7 +23,9 @@ const Favorites = () => {
             ))}
           </CardsContainer>
         ) : (
-          <ContainerMessage>No favorites</ContainerMessage>
+          <ContainerMessage data-testid="noFavContainer">
+            No favorites
+          </ContainerMessage>
         )}
       </>
     </PageContainerWithPadding>

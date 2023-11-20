@@ -7,7 +7,7 @@ const NotFound = () => {
 
   return (
     <PageContainer>
-      <ContainerMessage>
+      <ContainerMessage data-testid="notFound">
         Page not found!
         <Button onClick={() => navigate('/planets')}>Go to Planets page</Button>
       </ContainerMessage>
