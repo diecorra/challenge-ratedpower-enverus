@@ -2,8 +2,18 @@
 
 Link: https://challenge-ratedpower-enverus.netlify.app
 
-
 ![challengeWeApp](https://github.com/diecorra/challenge-ratedpower-enverus/assets/32736570/a45fc49e-8333-47ad-bc91-3227ab8ca0a0)
+
+## Index:
+
+1. [Architecture and Components](#architecture-and-components)
+2. [Technical Decisions](#technical-decisions)
+3. [Work Sequence](#work-sequence)
+4. [Testing Strategy](#testing-strategy)
+5. [Implementation Alternatives](#implementation-alternatives)
+6. [If More Time](#if-more-time)
+7. [Scalability](#scalability)
+8. [Feedback](#feedback)
 
 ### Architecture and Components
 
