@@ -28,22 +28,21 @@ I structured the project into various sections to make it as understandable as p
 
 ##### Interaction of components
 
-The Favorites component:
-serves as a container for displaying favorite planets, and the Card component represents an individual card for each favorite planet.
+The Favorites component:<br>
+serves as a container for displaying favorite planets, and the Card component represents an individual card for each favorite planet.<br>
 The interaction involves conditional rendering of a modal when the "Remove" icon is clicked, allowing the user to confirm the removal of a favorite planet.
 The useFavoritePlanets hook manages the state related to favorite planets across these components.
-Planets Component (Planets.js): Renders the main page and includes the Table and PlanetDetail components within a PageContainerMax. The Table component is responsible for displaying a paginated list of planets, and the PlanetDetail component shows detailed information about a selected planet.
 
-Planets:
-is the page that will render in ".../planets", so interact with PlanetDetail and Table components.
+Planets:<br>
+is the page that will render in ".../planets", the main page so interact with PlanetDetail and Table components.
 
-PlanetDetail Component:
+PlanetDetail Component:<br>
 Retrieves the planet name from the URL using useParams from React Router.
 Utilizes the usePlanets hook to access the global state containing the list of planets and their status.
 Displays detailed information about the selected planet, including climate and gravity, if the planet is found in the list.
 It renders within the Planets component.
 
-Table Component:
+Table Component:<br>
 Manages the paginated table functionality using the @tanstack/react-table library. Fetches data from the server using useQuery from react-query and updates the global state using the usePlanets and useFavoritePlanets hooks. Provides navigation to planet details on row click through the useNavigate hook. Renders loading overlays, error messages, and the paginated table itself.
 
 ### Technical Decisions
@@ -86,26 +85,27 @@ Not having an ID for planet data, I decided to use the name as the ID, as there 
 7. Structuring and implementing the API call for planet data.
 8. Structuring and implementing stores and saving favorites.
 9. Structuring and implementing components, ensuring communication between them.
-   E2E testing with Cypress.
+10. E2E testing with Cypress.
 
 ### Testing Strategy
 
-Due to time constraints, only E2E testing with Cypress was conducted.
+Due to time constraints, only E2E testing with Cypress was conducted.<br>
 Planned to use React Testing Library for unit testing individual components and store tests with Zustand later on.
 Considered dividing tests into major components, verifying the existence of components, and checking major aspects within them: sidebar, planets, favorites.
 
 ### Implementation Alternatives
 
-Considered using Zustand and localStorage due to the limited data quantity.
-Contemplated an alternative solution of saving planet IDs (name) to localStorage and, on the first access to the web app, fetching and saving "favorite" planet data (if any) to the Zustand store using a service worker working in the background, without impacting application performance.
+Considered using Zustand and localStorage due to the limited data quantity.<br>
+Contemplated an alternative solution of saving planet IDs (name) to localStorage and, on the first access to the web app, fetching and saving "favorite" planet data (if any) to the Zustand store using a service worker working in the background, without impacting application performance.<br>
 Potential issue with the alternative solution: possible server overload on the first access if there are many planets marked as favorites. In this case, scheduled calls every "X" seconds/milliseconds could be implemented to prevent overloading the server.
 
 ### If More Time
 
-Would have added mobile responsiveness to make the application more usable on phones and turned it into a PWA.
-Would have improved the UI of the planet details section, adding more information and enhancing the visual appeal.
-Would have added features for the visually impaired.
-Would have improved tests by adding unit tests for individual components and unit tests for data stores created with Zustand.
+Would have :
+* added mobile responsiveness to make the application more usable on phones and turned it into a PWA.
+* improved the UI of the planet details section, adding more information and enhancing the visual appeal.
+* added features for the visually impaired.
+* improved tests by adding unit tests for individual components and unit tests for data stores created with Zustand.
 
 ### Scalability
 
@@ -115,6 +115,5 @@ Recommended adding a "true" ID to the APIs (if possible) to resolve potential co
 
 ### Feedback
 
-Expressing the joy of working on the project.
-Acknowledging time constraints for creating a well-structured application.
-Desiring more time to delve into details, as specified in point 2f.
+Very happy to work on the project, acknowledging time constraints for creating a well-structured application.
+<br>Desiring more time to delve into details, as specified in point 2f.
