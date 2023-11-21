@@ -1,6 +1,9 @@
 # challenge-ratedpower-enverus
 
-Link: https://challenge-ratedpower-enverus.netlify.app/
+Link: https://challenge-ratedpower-enverus.netlify.app
+
+
+![challengeWeApp](https://github.com/diecorra/challenge-ratedpower-enverus/assets/32736570/a45fc49e-8333-47ad-bc91-3227ab8ca0a0)
 
 ### Architecture and Components
 
