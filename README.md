@@ -26,6 +26,26 @@ I structured the project into various sections to make it as understandable as p
 - "store": where I implemented data stores using Zustand.
 - "styles": where I implemented all styles used throughout the application.
 
+##### Interaction of components
+
+The Favorites component:
+serves as a container for displaying favorite planets, and the Card component represents an individual card for each favorite planet.
+The interaction involves conditional rendering of a modal when the "Remove" icon is clicked, allowing the user to confirm the removal of a favorite planet.
+The useFavoritePlanets hook manages the state related to favorite planets across these components.
+Planets Component (Planets.js): Renders the main page and includes the Table and PlanetDetail components within a PageContainerMax. The Table component is responsible for displaying a paginated list of planets, and the PlanetDetail component shows detailed information about a selected planet.
+
+Planets:
+is the page that will render in ".../planets", so interact with PlanetDetail and Table components.
+
+PlanetDetail Component:
+Retrieves the planet name from the URL using useParams from React Router.
+Utilizes the usePlanets hook to access the global state containing the list of planets and their status.
+Displays detailed information about the selected planet, including climate and gravity, if the planet is found in the list.
+It renders within the Planets component.
+
+Table Component:
+Manages the paginated table functionality using the @tanstack/react-table library. Fetches data from the server using useQuery from react-query and updates the global state using the usePlanets and useFavoritePlanets hooks. Provides navigation to planet details on row click through the useNavigate hook. Renders loading overlays, error messages, and the paginated table itself.
+
 ### Technical Decisions
 
 ##### Zustand, localStorage
