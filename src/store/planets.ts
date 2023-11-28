@@ -15,7 +15,7 @@ export const usePlanets = create<PlanetStore>()(
       setStatus: (status: Status) => set({ status }),
     }),
     {
-      name: 'favoritesPlanets',
+      name: 'allPlanets',
     }
   )
 );
