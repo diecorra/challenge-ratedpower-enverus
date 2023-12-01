@@ -1,4 +1,4 @@
-# challenge-ratedpower-enverus
+# frontend-challenge
 
 Link: https://challenge-ratedpower-enverus.netlify.app
 
