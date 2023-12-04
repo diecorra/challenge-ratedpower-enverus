@@ -25,12 +25,18 @@ export const columns = (addFavorite: any, removeFavorite: any) => [
       info.getValue() ? (
         <FaStarMarked
           data-testid={`starMarked${info.row.id}`}
-          onClick={() => removeFavorite(info.row.original.name)}
+          onClick={(e: any) => {
+            removeFavorite(info.row.original.name);
+            e.stopPropagation();
+          }}
         />
       ) : (
         <FaRegStarUnMarked
           data-testid={`starUnMarked${info.row.id}`}
-          onClick={() => addFavorite(info.row.original)}
+          onClick={(e: any) => {
+            addFavorite(info.row.original);
+            e.stopPropagation();
+          }}
         />
       ),
   }),
